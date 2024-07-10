@@ -1,4 +1,4 @@
-package config
+package configs
 
 import (
 	"os"
@@ -14,16 +14,30 @@ type (
 		DBPASSWORD string
 		DBNAME     string
 	}
+	AppConfig struct {
+		SERVERPORT string
+	}
+	Configs struct {
+		DB  DBConfig
+		APP AppConfig
+	}
 )
 
-func LoadDB() DBConfig {
+func LoadConfig() Configs {
 	godotenv.Load(".env")
 
-	return DBConfig{
+	db := DBConfig{
 		DBPORT:     os.Getenv("DB_PORT"),
 		DBHOST:     os.Getenv("DB_HOST"),
 		DBUSER:     os.Getenv("DB_USER"),
 		DBPASSWORD: os.Getenv("DB_PASSWORD"),
 		DBNAME:     os.Getenv("DB_NAME"),
+	}
+	app := AppConfig{
+		SERVERPORT: os.Getenv("SERVER_PORT"),
+	}
+	return Configs{
+		APP: app,
+		DB:  db,
 	}
 }
