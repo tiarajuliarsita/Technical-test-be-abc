@@ -45,7 +45,7 @@ docker pull tiarajuliarsita/test-abc:v1
 or if you want to build yourself, you can run:
 
 ```shell
-docker pull (username)/(name of image):(version)
+docker build -t (username)/(name of image):(version)
 ```
 #### Running Docker Container
 ```shell
