@@ -8,7 +8,7 @@ A simple Todo list API project with CRUD operations, authentication using JWT, a
 # Tech Used
 ![Golang](https://img.shields.io/badge/golang-%23F7DF1E.svg?style=for-the-badge&logo=go&logoColor=black)
 ![Echo](https://img.shields.io/badge/echo-%2342D6AD.svg?style=for-the-badge&logo=go&logoColor=white)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgresql-%2300f.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![GORM](https://img.shields.io/badge/gorm-%2300f.svg?style=for-the-badge&logo=go&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
