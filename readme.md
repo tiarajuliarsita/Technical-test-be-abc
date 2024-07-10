@@ -5,9 +5,6 @@
 # Description
 A simple Todo list API project with CRUD operations, authentication using JWT, and powered by Golang, Echo, Postgres, and implemented unit test on services and containerize using docker
 
-# Features
-This API is developed using Golang, echo web framework, GORM for database operations, and JWT for authentication.
-
 # Tech Used
 ![Golang](https://img.shields.io/badge/golang-%23F7DF1E.svg?style=for-the-badge&logo=go&logoColor=black)
 ![Echo](https://img.shields.io/badge/echo-%2342D6AD.svg?style=for-the-badge&logo=go&logoColor=white)
@@ -26,8 +23,11 @@ Before running the program, make sure you've installed the required dependencies
 - Install POSTGRES driver for GORM: `go get gorm.io/driver/postgres"`
 - Install JWT library: `go get github.com/golang-jwt/jwt/v5`
 
-### Database setup:
+# Database setup:
 Create your Postgres database and update the database configuration in the project.
+
+# Env Configuration
+For environment-specific configurations, please rename the example.env file to .env and update it with your project-specific environment variables. Make sure to set the appropriate values for configurations
 
 ### Run the program:
 ```shell
@@ -42,6 +42,11 @@ Pull the Docker image from your Docker repository:
 ```shell
 docker pull tiarajuliarsita/test-abc:v1
 ```
+or if you want to build yourself, you can run:
+
+```shell
+docker pull (username)/(name of image):(version)
+```
 #### Running Docker Container
 ```shell
 docker run -e DB_HOST=host.docker.internal \
@@ -51,11 +56,33 @@ docker run -e DB_HOST=host.docker.internal \
            -e DB_PASSWORD= (YOUR_DB_PASSWORD)\
            -e SERVER_PORT=(YOUR_APP_PORT) \
            -e JWT_SECRET=(YOUR_JWT_PORT) \
-           -p 8080:8080 \
+           -p (port_host):(port_container) \
            tiarajuliarsita/test-abc:v1
-docker build -t tiarajuliarsita/test-abc:v1 .
-
-
 ```
+
+# Unit Test
+Using testify for testing code and generate mock with Mockery.
+- Install Mockery
+```shell
+go install github.com/vektra/mockery/v2@v2.38.0
+```
+- Generate mock
+  before generate, make sure you are on the right path
+```shell
+mockery -all  
+```
+
+- Run Unit test
+run with coverage
+```shell
+go test -v -cover   
+```
+
+# API Collection
+Download the API collection from the following link to get started
+
+[API collection](https://drive.google.com/drive/folders/1_XBbrNNol9Dhvu8jRRvU9lLO5yGv4zAG)
+
+
 
 
